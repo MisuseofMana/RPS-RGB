@@ -30,6 +30,11 @@ func _physics_process(delta):
 		shoot()
 
 func shoot():
-	var rock = ROCK.instantiate()
-	add_child(rock)
+	#var rock = Rock.new(rock_origin.position.x, rock_origin.position.y)
+	
+	var rock : Rock = ROCK.instantiate()
+	rock.start_position = rock_origin.global_position
+	rock.position = rock_origin.global_position
+	get_tree().root.add_child(rock)
+	
 	#rock.transform = rock_origin.global_transform

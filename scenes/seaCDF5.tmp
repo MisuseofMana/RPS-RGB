@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://boxk4005xtew4"]
+
+[ext_resource type="PackedScene" uid="uid://cuvh0c2s2c7mr" path="res://actors/player.tscn" id="1_8ds1a"]
+[ext_resource type="PackedScene" uid="uid://dw2xh6ug4u00p" path="res://scenes/rock.tscn" id="2_4sdo4"]
+[ext_resource type="Texture2D" uid="uid://b7x1jg0ag1t7u" path="res://icon.svg" id="3_01in5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6hwyc"]
+a = Vector2(1176, 128)
+b = Vector2(-64, 128)
+
+[node name="Seans-floor" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8ds1a")]
+position = Vector2(105, 196)
+ROCK = ExtResource("2_4sdo4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 150)
+shape = SubResource("SegmentShape2D_6hwyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(588, 560)
+scale = Vector2(11.1875, 4.44)
+texture = ExtResource("3_01in5")
