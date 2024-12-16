@@ -17,9 +17,6 @@ func _ready():
 	position = P0
 	P1 = P1 + start_position
 	P2 = P2 + start_position
-	print(P0)
-	print(P1)
-	print(P2)
 
 func _physics_process(delta):
 	time_elapsed += delta
