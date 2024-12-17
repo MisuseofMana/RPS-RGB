@@ -33,7 +33,7 @@ func _on_Bullet_body_entered(body):
 		body.queue_free()
 	queue_free()
 	
-func bezier(Position1: Vector2, Position2: Vector2, Position3: Vector2, t: float) -> Vector2:
-	var x = (1 - t) * (1 - t) * P0.x + 2 * (1 - t) * t * P1.x + t * t * P2.x
-	var y = (1 - t) * (1 - t) * P0.y + 2 * (1 - t) * t * P1.y + t * t * P2.y
-	return Vector2(x, y)
+func bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float) -> Vector2:
+	var q0 = p0.lerp(p1, t)
+	var q1 = p1.lerp(p2, t)
+	return q0.lerp(q1, t)
