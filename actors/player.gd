@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 @onready var rock_origin = $Marker2D
 
-@export var ROCK : PackedScene
+@export var ROCK : PackedScene = preload("res://scenes/rock.tscn")
 
 func _physics_process(delta):
 	# Add the gravity.
